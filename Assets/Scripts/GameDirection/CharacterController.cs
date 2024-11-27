@@ -6,7 +6,6 @@ using UnityEngine;
 using UnityEngine.TextCore.Text;
 using UnityEngine.Video;
 using UnityEngine.XR;
-
 enum animationType{
     eyes = 0,
     life = 1
@@ -18,12 +17,11 @@ public class CharacterController : MonoBehaviour
 
     public GameOver gameOver;
 
-    // Start is called before the first frame update
+    bool isGameAnswerCorrect;
 
+// shows the death sequences
     public void showGameOverScreen(bool isCorrect)
     {
-        characterAnimatorEinstein[(int)animationType.eyes].speed = 0;
-        characterAnimatorSabrina[(int)animationType.eyes].speed = 0;
 
         if (isCorrect)
         {
@@ -37,6 +35,7 @@ public class CharacterController : MonoBehaviour
 
         }
 
+        isGameAnswerCorrect = isCorrect;
         StartCoroutine(hideGameOverScreen());
 
     }
@@ -49,10 +48,35 @@ public class CharacterController : MonoBehaviour
         reloadIdleAnimations();
 
     }
-
+// restarts the idle animations depending if the answer is correct or wrong.
     public void reloadIdleAnimations()
     {
-        characterAnimatorEinstein[(int)animationType.eyes].speed = 1;
-        characterAnimatorSabrina[(int)animationType.eyes].speed = 1;
+
+        if (isGameAnswerCorrect)
+        {
+            characterAnimatorSabrina[(int)animationType.eyes].speed = 0;
+            characterAnimatorSabrina[(int)animationType.eyes].enabled = false;
+            characterAnimatorSabrina[(int)animationType.life].Rebind();
+            characterAnimatorSabrina[(int)animationType.life].Play("IdleDeath");
+            characterAnimatorEinstein[(int)animationType.life].Rebind();
+            characterAnimatorEinstein[(int)animationType.life].Play("IdleAlive");
+            characterAnimatorEinstein[(int)animationType.eyes].Rebind();
+            characterAnimatorEinstein[(int)animationType.eyes].enabled = true;
+            characterAnimatorEinstein[(int)animationType.eyes].speed = 1;
+        }
+        else
+        {
+            characterAnimatorEinstein[(int)animationType.eyes].speed = 0;
+            characterAnimatorEinstein[(int)animationType.eyes].enabled = false;
+            characterAnimatorEinstein[(int)animationType.life].Rebind();
+            characterAnimatorEinstein[(int)animationType.life].Play("IdleDeath");
+            characterAnimatorSabrina[(int)animationType.life].Rebind();
+            characterAnimatorSabrina[(int)animationType.life].Play("IdleAlive");
+            characterAnimatorSabrina[(int)animationType.eyes].Rebind();
+            characterAnimatorSabrina[(int)animationType.eyes].enabled = true;
+            characterAnimatorSabrina[(int)animationType.eyes].speed = 1;
+        }
+
+        
     }
 }
