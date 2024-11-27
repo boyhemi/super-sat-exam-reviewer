@@ -233,7 +233,7 @@ Transform:
   m_GameObject: {fileID: 56440129}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.1850016, y: -3.4549987, z: 1}
+  m_LocalPosition: {x: 1.185002, y: -3.4549987, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1743,7 +1743,7 @@ Animator:
   m_GameObject: {fileID: 542621244}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1c49f90a95ac34374b279159001d8093, type: 2}
+  m_Controller: {fileID: 9100000, guid: c766c69c839554891ac2d5552d1214ba, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3705,7 +3705,7 @@ Transform:
   m_GameObject: {fileID: 1203407108}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.73999864, y: -3.4549959, z: 0.9999885}
+  m_LocalPosition: {x: -0.7399986, y: -3.4549959, z: 0.9999885}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3883,7 +3883,7 @@ MonoBehaviour:
   gameOverSequence: {fileID: 2030618804}
   explosionTrigger: {fileID: 1179845745}
   animationCharacters:
-  - {fileID: 0}
+  - {fileID: 1427991856}
   - {fileID: 1921447127}
 --- !u!1 &1229506623
 GameObject:
@@ -4825,6 +4825,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1353714852}
+  - component: {fileID: 1353714853}
   m_Layer: 5
   m_Name: Sabrina
   m_TagString: Untagged
@@ -4854,6 +4855,27 @@ RectTransform:
   m_AnchoredPosition: {x: 174, y: -183}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1353714853
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353714851}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8edbeba6010074f3eab719d8b5a75431, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1361083422
 GameObject:
   m_ObjectHideFlags: 0
@@ -5372,7 +5394,7 @@ Animator:
   m_GameObject: {fileID: 1427991854}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1c49f90a95ac34374b279159001d8093, type: 2}
+  m_Controller: {fileID: 9100000, guid: a9953399362f44ba1aa7e3c5d58cf1c9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5937,7 +5959,7 @@ Transform:
   m_GameObject: {fileID: 1727878579}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.0999984, y: -5.0899963, z: -0.000011503696}
+  m_LocalPosition: {x: 1.099998, y: -5.0899963, z: -0.0000115037}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6318,7 +6340,7 @@ Transform:
   m_GameObject: {fileID: 1933152037}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.87999976, y: -5.0899963, z: -0.000011503696}
+  m_LocalPosition: {x: -0.8799998, y: -5.0899963, z: -0.0000115037}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6486,7 +6508,7 @@ Transform:
   m_GameObject: {fileID: 1991231688}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.1850014, y: -3.4549959, z: 0.9999885}
+  m_LocalPosition: {x: 1.185001, y: -3.4549959, z: 0.9999885}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6680,9 +6702,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterAnimatorEinstein:
   - {fileID: 470420813}
+  - {fileID: 542621247}
   characterAnimatorSabrina:
   - {fileID: 2141725918}
-  - {fileID: 1921447127}
+  - {fileID: 1353714853}
   gameOver: {fileID: 1222515078}
 --- !u!1 &2011886304
 GameObject:

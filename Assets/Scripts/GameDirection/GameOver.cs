@@ -44,8 +44,10 @@ public class GameOver : MonoBehaviour
             einsteinBazooka.SetActive(true);
             explosionTrigger.enabled = true;
             animationCharacters[(int)characters.sabrina].Rebind();
+            animationCharacters[(int)characters.einstein].Rebind();
             animationCharacters[(int)characters.sabrina].SetBool("isAlive", false);
             animationCharacters[(int)characters.sabrina].Play("DeadBody");
+            animationCharacters[(int)characters.einstein].Play("Alive");
             gameOverText.text = "Your answer is correct! FATALITY!";
             AudioController.Instance.PlayEinsteinWinBGM();
         }
@@ -55,11 +57,13 @@ public class GameOver : MonoBehaviour
             einsteinBazooka.SetActive(false);
             explosionTrigger.StopEinsteinExplosion();
             animationCharacters[(int)characters.sabrina].Rebind();
+            animationCharacters[(int)characters.einstein].Rebind();
             animationCharacters[(int)characters.sabrina].SetBool("isAlive", true);
             animationCharacters[(int)characters.sabrina].Play("Alive");
             explosionTrigger.enabled = false;
             gameOverText.text = "Your answer is wrong! Idiocracy always wins!";
             AudioController.Instance.PlaySabrinaWinBGM();
+            animationCharacters[(int)characters.einstein].Play("DoodledEinstein");
 
         }
     }
