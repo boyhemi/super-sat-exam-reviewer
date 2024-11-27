@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public TMP_Text reviewerQuestion;
 
     public ButtonController[] buttonsData;
+
+    public CharacterController characterController;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,7 @@ public class GameManager : MonoBehaviour
     void initializeQuestionsAndAnswers()
     {
         // initalizes the questions and answers
-        questionsAndAnswers = new string[][] { new string[] {"If 3𝑥 + 2 = 14 3x+2=14 what is the value of 𝑥?", "3","4","5","6"}};
+        questionsAndAnswers = new string[][] { new string[] {"If 3x + 2 = 14 3x+2=14 what is the value of x?", "3","4","5","6"}};
 
         for (int i = 0; i < questionsAndAnswers.Length; i++)
         {
@@ -42,11 +44,11 @@ public class GameManager : MonoBehaviour
         {
             if (answer == matchedQuestionsAndAnswers[i][1])
             {
-                Debug.Log("Correct answer, Einstein is smart");
+                characterController.showGameOverScreen(true);
             }
             else
             {
-                Debug.Log("Give me a Macao Milktea!");
+                characterController.showGameOverScreen(false);
             }
         }
     }
